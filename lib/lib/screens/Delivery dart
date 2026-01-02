@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+
+class TrackDelivery extends StatelessWidget {
+  const TrackDelivery({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Track Delivery')),
+      body: const Center(
+        child: Text(
+          'Status: In Transit 🚚\nYour goods are on the way.',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+    );
+  }
+}
