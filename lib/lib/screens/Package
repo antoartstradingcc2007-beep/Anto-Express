@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'payment_screen.dart';
+
+class RequestDelivery extends StatefulWidget {
+  const RequestDelivery({super.key});
+
+  @override
+  State<RequestDelivery> createState() => _RequestDeliveryState();
+}
+
+class _RequestDeliveryState extends State<RequestDelivery> {
+  final TextEditingController pickup = TextEditingController();
+  final TextEditingController dropoff = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Request Delivery')),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            TextField(
+              controller: pickup,
+              decoration: const InputDecoration(labelText: 'Pickup Location'),
+            ),
+            TextField(
+              controller: dropoff,
+              decoration: const InputDecoration(labelText: 'Drop-off Location'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              child: const Text('Proceed to Payment'),
+              onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const PaymentScreen()));
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
